@@ -16,9 +16,12 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        
+        
     }
 }
 
 #Preview {
     ContentView()
 }
+
