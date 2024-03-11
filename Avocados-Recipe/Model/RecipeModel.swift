@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct RecipeModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    RecipeModel()
+struct Recipe: Identifiable {
+    var id = UUID()
+    var title: String
+    var headline: String
+    var image: String
+    var rating: Int
+    var serves: Int
+    var preparation: Int
+    var cooking: Int
+    var instructions: [String]
+    var ingredients: [String]
 }

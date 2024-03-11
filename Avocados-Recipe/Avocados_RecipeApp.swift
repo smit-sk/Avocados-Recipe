@@ -11,7 +11,7 @@ import SwiftUI
 struct Avocados_RecipeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()
         }
     }
 }

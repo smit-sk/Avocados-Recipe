@@ -8,11 +8,63 @@
 import SwiftUI
 
 struct RecipeCardView: View {
+    var recipe: Recipe
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(alignment: .leading, spacing: 4) {
+            Image(recipe.image)
+                .resizable()
+                .scaledToFit()
+                .overlay(
+                    HStack() {
+                        Spacer()
+                        VStack {
+                            Image(systemName: "bookmark")
+                                .font(Font.title.weight(.light))
+                                .foregroundColor(Color.white)
+                                .imageScale(.small)
+                                .shadow(color: Color("ColorBlackTransparentLight"),
+                                        radius: 2,x:0,y: 0)
+                                .padding(.trailing, 20)
+                                .padding(.top, 22)
+                            Spacer()
+                        }
+                        
+                    }
+                )
+            
+            VStack(alignment: .leading, spacing: 6){
+                Text(recipe.title)
+                    .font(.system(.body, design: .serif))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("ColorGreenMedium"))
+                    .lineLimit(1)
+                
+                Text(recipe.headline)
+                    .font(.system(.subheadline, design: .serif))
+                    .foregroundColor(Color.gray)
+                    .italic()
+                
+                // RATING
+                RecipeRatingView(recipe: recipe)
+                
+                // Racipe Cooking View 
+                RecipeCookingView(recipe: recipe)
+                
+                
+            }
+            .padding()
+            .padding(.bottom, 12)
+        
+        }
+        .background(Color.white)
+        .cornerRadius(12)
+        .shadow(color: Color("ColorBlackTransparentLight"), radius: 8, x:0, y: 0)
+        .padding(.horizontal, 12)
     }
 }
 
 #Preview {
-    RecipeCardView()
+    RecipeCardView(recipe: recipesData[0])
 }

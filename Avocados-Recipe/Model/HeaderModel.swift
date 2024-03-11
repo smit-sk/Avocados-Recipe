@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-struct HeaderModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    HeaderModel()
+struct Header: Identifiable{
+    var id = UUID()
+    var image : String
+    var headline: String
+    var subheadline: String
+    
 }

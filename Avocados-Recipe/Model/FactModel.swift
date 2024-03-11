@@ -7,12 +7,9 @@
 
 import SwiftUI
 
-struct FactModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct Fact: Identifiable {
+    var id = UUID()
+    var image: String
+    var content: String
 }
 
-#Preview {
-    FactModel()
-}

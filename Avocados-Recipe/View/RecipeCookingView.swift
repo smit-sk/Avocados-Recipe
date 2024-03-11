@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct RecipeCookingView: View {
+    var recipe: Recipe
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(alignment: .center, spacing: 12, content: {
+            HStack(alignment: .center, spacing: 2, content :  {
+                Image(systemName: "person.2")
+                Text("Serves: \(recipe.serves)")
+            })
+            HStack(alignment: .center, spacing: 2, content :  {
+                Image(systemName: "clock")
+                Text("Prep: \(recipe.preparation)")
+            })
+            HStack(alignment: .center, spacing: 2, content :  {
+                Image(systemName: "flame")
+                Text("Cooking: \(recipe.cooking)")
+            })
+            
+        })
+        .font(.footnote)
+        .foregroundColor(Color.gray)
     }
 }
 
 #Preview {
-    RecipeCookingView()
+    RecipeCookingView(recipe: recipesData[0])
 }
