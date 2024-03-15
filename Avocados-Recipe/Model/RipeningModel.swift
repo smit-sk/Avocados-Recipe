@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct RipeningModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct Ripening: Identifiable{
+    var id = UUID()
+    var image: String
+    var stage: String
+    var title: String
+    var description: String
+    var ripeness: String
+    var instruction: String
 }
 
-#Preview {
-    RipeningModel()
-}
